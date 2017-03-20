@@ -6,16 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import objects.Person;
 
 import java.io.IOException;
 
 public class MainController {
+
     @FXML
     private Button btnAdd;
 
@@ -36,6 +36,20 @@ public class MainController {
 
     @FXML
     private Label labelCount;
+
+    @FXML
+    private TableColumn<Person, String> columnFio;
+
+    @FXML
+    private TableColumn<Person, String> columnPhone;
+
+    @FXML
+    private void initialize(){
+        columnFio.setCellValueFactory(new PropertyValueFactory<Person, String>("fio"));
+        columnPhone.setCellValueFactory(new PropertyValueFactory<Person, String>("phone"));
+
+    }
+
 
     public void showDailog(ActionEvent actionEvent) {
 

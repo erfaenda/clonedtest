@@ -1,10 +1,12 @@
 package start;
 
+import interfaces.impls.CollectionAddressBook;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import objects.Person;
 
 public class Main extends Application {
 
@@ -17,6 +19,24 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 400, 474));
         primaryStage.show();
     }
+   /** private void testData(){
+        CollectionAddressBook addressBook = new CollectionAddressBook();
+        Person person = new Person();
+        person.setFio("Ололошка");
+        person.setPhone("546169");
+
+        Person person2 = new Person();
+        person2.setFio("Мариюшка");
+        person2.setPhone("6666666");
+
+        addressBook.add(person);
+        addressBook.add(person2);
+
+        person.setFio("Леша");
+        //addressBook.update(person);
+        addressBook.delete(person);
+    } //метод для тестирования кода, проверил все ли работает */
+
 
 
     public static void main(String[] args) {
